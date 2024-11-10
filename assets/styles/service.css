@@ -1,0 +1,84 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.services-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+
+.service-card {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 48%; 
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+}
+
+
+.service-details {
+    padding: 20px;
+    text-align: left;
+}
+
+
+.service-details h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6b4f46;
+    margin-bottom: 15px;
+}
+
+
+.service-details p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+.service-details .price {
+    font-size: 1.4rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.service-details .btn {
+    background-color: #6b4f46; 
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.service-details .btn:hover {
+    background-color: #d0a59d;
+}
