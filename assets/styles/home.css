@@ -9,27 +9,26 @@ body {
 html {
     scroll-behavior: smooth;
 }
-/* Container de la page avec l'image */
+
 .home-page {
     position: relative;
     width: 100%;
-    height: 100vh; /* Utilise toute la hauteur de l'écran */
+    height: 100vh; 
     display: flex;
-    justify-content: flex-end; /* Aligne le contenu à droite */
-    align-items: center; /* Centre verticalement le contenu */
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* Image de fond en taille de bannière */
 .home-page img.hairImage {
-    width: 100%; /* Prend toute la largeur */
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    object-fit: cover; /* Assure que l'image couvre toute la zone sans distorsion */
-    position: absolute; /* Positionne l'image derrière le texte */
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover; 
+    position: absolute; 
     top: 0;
     left: 0;
 }
 
-/* Superposition sombre pour améliorer la lisibilité du texte */
 .home-page::before {
     content: "";
     position: absolute;
@@ -37,7 +36,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.237); /* Superposition sombre semi-transparente */
+    background: rgba(0, 0, 0, 0.237); 
     z-index: 1;
 }
 
@@ -51,7 +50,6 @@ html {
     max-width: 500px;
 }
 
-/* Style du titre */
 .home-page h1 {
     font-family: 'Arial', sans-serif;
     font-size: 3rem;
@@ -59,13 +57,11 @@ html {
     margin-bottom: 20px;
 }
 
-/* Style du paragraphe */
 .home-page p {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
-/* Style du bouton */
 .home-page .btn {
     background-color:  #d0a59d; 
     color: #ffffff ;
@@ -78,7 +74,6 @@ html {
     transition: background-color 0.3s ease;
 }
 
-/* Effet hover pour le bouton */
 .home-page .btn:hover {
-    background-color: #6b4f46; /* Une teinte plus claire sur hover */
+    background-color: #6b4f46; 
 }
