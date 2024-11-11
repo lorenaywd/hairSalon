@@ -25,7 +25,7 @@ class BookingController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/booking/{serviceId}', name: 'app_booking')]
+    #[Route('/booking/{serviceId<\d+>}', name: 'app_booking')]
     public function index(Request $request, int $serviceId): Response
     {
        
@@ -60,7 +60,7 @@ class BookingController extends AbstractController
                 }
             }
 
-            // Ajouter la date et ses créneaux horaires disponibles au tableau global
+
             if (!empty($daySlots)) {
                 $weeklySlots[] = [
                     'date' => $currentDate->format('Y-m-d'), 
@@ -117,10 +117,9 @@ class BookingController extends AbstractController
                     $this->entityManager->persist($booking);
                     $this->entityManager->flush();
 
-                    // Message de confirmation
-                    // $this->addFlash('success', 'Réservation effectuée avec succès !');
-                    // return $this->redirectToRoute('app_booking', ['serviceId' => $serviceId]);
-                    return $this->render('booking/confirmation.html.twig');
+    
+                    return $this->redirectToRoute('app_booking_confirmation');
+    
                 }
             } else {
                 $this->addFlash('error', 'Veuillez sélectionner un créneau avant de confirmer la réservation.');
@@ -133,6 +132,14 @@ class BookingController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    #[Route('/booking/confirmation', name: 'app_booking_confirmation')]
+    public function ConfirmeReservation(): Response
+    {
+        return $this->render('booking/confirmation.html.twig');
+    }
+
+
 }
 
 

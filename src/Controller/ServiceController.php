@@ -10,14 +10,5 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ServiceController extends AbstractController
 {
 
-#[Route('/services', name: 'app_services')]
-public function index(ServiceRepository $serviceRepository): Response
-{
-    $services = $serviceRepository->findAll();
-    return $this->render('service/index.html.twig', [
-        'services' => $services,
-    ]);
-}
-
 }
 

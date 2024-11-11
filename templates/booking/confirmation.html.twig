@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello ServiceController!{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/confirmation.css') }}">
+{% endblock %}
+
 
 {% block body %}
 <div>
     <p>Votre réservation pour la prestation a été confirmée. Nous vous avons communiqué une confirmation par mail. A très bientôt dans notre salon</p>
-    <a href="{{ path('app_services') }}" class="btn btn-secondary">Continuer à voir nos services</a>
+    <a href="{{ path('app') }}" class="btn btn-secondary">Continuer à voir nos services</a>
 </div>
 
 {% endblock %}

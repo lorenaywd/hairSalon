@@ -1,26 +1,35 @@
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f1f1f1; 
+    background-color: #f1f1f1;
     color: #3333334c;
     margin: 0;
     padding: 0;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
+/* Container de la page avec l'image */
 .home-page {
     position: relative;
     width: 100%;
-    height: 100vh; 
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed; 
+    height: 100vh; /* Utilise toute la hauteur de l'écran */
     display: flex;
-    justify-content: flex-end; 
-    align-items: center; 
+    justify-content: flex-end; /* Aligne le contenu à droite */
+    align-items: center; /* Centre verticalement le contenu */
 }
 
+/* Image de fond en taille de bannière */
+.home-page img.hairImage {
+    width: 100%; /* Prend toute la largeur */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    object-fit: cover; /* Assure que l'image couvre toute la zone sans distorsion */
+    position: absolute; /* Positionne l'image derrière le texte */
+    top: 0;
+    left: 0;
+}
 
+/* Superposition sombre pour améliorer la lisibilité du texte */
 .home-page::before {
     content: "";
     position: absolute;
@@ -28,37 +37,38 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(86, 86, 86, 0.4); 
-    z-index: 1; 
+    background: rgba(0, 0, 0, 0.237); /* Superposition sombre semi-transparente */
+    z-index: 1;
 }
 
 
 .home-page .content {
     position: relative;
     z-index: 2; 
-    text-align: left; 
-    color: #fff; 
-    padding: 0 30px; 
-    max-width: 500px; 
+    text-align: left;
+    color: #fff;
+    padding: 0 30px;
+    max-width: 500px;
 }
 
-
+/* Style du titre */
 .home-page h1 {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
+/* Style du paragraphe */
 .home-page p {
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
-
+/* Style du bouton */
 .home-page .btn {
-    background-color: #6b4f46; 
-    color: white;
+    background-color:  #d0a59d; 
+    color: #ffffff ;
     padding: 10px 20px;
     font-size: 1.2rem;
     border: none;
@@ -68,7 +78,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-
+/* Effet hover pour le bouton */
 .home-page .btn:hover {
-    background-color: #d0a59d; 
+    background-color: #6b4f46; /* Une teinte plus claire sur hover */
 }

@@ -8,17 +8,34 @@
 
 {% block body %}
     <div class="home-page">
-     <img src="{{ asset('images/bannièreCheveuxTextures.webp') }}" alt="Nettoyage appartement" class="cleaning-image">
+     <img src="{{ asset('images/banniere.webp')}}" alt="texturedHair" class="hairImage">
         <div class="content">
-            <h1>Bienvenue à HairSalon</h1>
+            <h1>Bienvenue chez HairSalon</h1>
             <p>Découvrez nos services pour sublimer vos cheveux !</p>
-            <a href="{{ path('app_services') }}" class="btn btn-primary">Consultez nos services</a>
+            <a href="#services" class="btn btn-primary">Consultez nos services</a>
         </div>
     </div>
-
-     <div class="services-page">
+     <div id="services" class="services-page">
         {% for service in services %}
             <div class="service-card">
+            <div class="service-image">
+                <!-- Logique conditionnelle pour afficher une image différente selon le service -->
+                {% if service.name == "Coupe personnalisée "  %}
+                    <img src="{{ asset('images/crepus.webp') }}" alt="Coupe" class="service-img">
+                {% elseif service.name == 'Formule "Éclat Complet" : Coupe + Coloration + Soin' %}
+                    <img src="{{ asset('images/couleur.png') }}" alt="eclat" class="service-img">
+                {% elseif service.name == "Coloration éclatante" %}
+                    <img src="{{ asset('images/coloration.webp') }}" alt="Coloration" class="service-img">
+                {% elseif service.name == "Soin protéiné" %}
+                    <img src="{{ asset('images/soinprot.jpg') }}" alt="reparateur" class="service-img">
+                {% elseif service.name == "Soin Réparateur" %}
+                    <img src="{{ asset('images/soinrep.jpg') }}" alt="reparateur" class="service-img">
+                {% elseif service.name == 'Formule "Essentiel Brillance" : Coupe + Soin' %}
+                    <img src="{{ asset('images/soinbril.jpg') }}" alt="brillance" class="service-img">
+                {% else %}
+                    <img src="{{ asset('images/bannièreCheveuxTextures.webp') }}" alt="Image de service" class="service-img">
+                {% endif %}
+            </div>
                 <div class="service-details">
                     <h3>{{ service.name }}</h3>
                     <p>{{ service.description }}</p>
